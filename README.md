@@ -1,2 +1,2 @@
 # Palabritas
-Wordle en Español - En camino a trabajo Junior
+Wordle en Español - En camino a trabajo Junior!

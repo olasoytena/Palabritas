@@ -1,5 +1,14 @@
-export const Card = () => {
+
+import { Link } from "react-router-dom"
+
+export const NavBar = () => {
     return (
-        <div>NavBar</div>
+        <nav className='menu'>
+            <Link to='/'> Inicio</Link>    
+            <Link to='/Login'> Login</Link>        
+            <Link to='/Proyects'> Proyects</Link>                             
+            <Link to='/Abount'> Abount</Link>   
+        </nav>
+        
     )
 }

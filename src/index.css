@@ -8,3 +8,19 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.menu{
+  background-color: black;
+  color: white;
+  display: flex;
+}
+
+.menu a{
+  text-decoration: none;
+  color: white;
+  padding: 15px 10px;
+}
+
+.menu a:hover{
+  background-color: #1f1f1f;
+}

@@ -15,17 +15,16 @@ const config = {
     database: process.env.DB_NAME,
     options:{
         trustServerCertificate:true,
-        trustedConnection:false,
         enableArithAbort:true,
-        instancename:"SQLEXPRESS",
+ 
     },
-    port:1433
+    port:PORT
 }
 
 app.get('/words', async(req,res)=>{
     try{
     const pool=await sql.connect(config);
-    const data=pool.request().query('SELECT * FROM dbo.fiveWords WHERE ID < 5;')
+    const data=pool.request().query('SELECT * FROM dbo.wordsFive WHERE ID < 5;')
     data.then(res1=>{
         return res.json(res1);
     })

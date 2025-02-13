@@ -1,0 +1,77 @@
+/* Contenedor principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+/* Título */
+h1 {
+    margin-bottom: 20px;
+}
+
+/* Cuadrícula adaptable sin necesidad de JavaScript */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px;
+    width: min(80vw, 400px);
+    height: min(80vw, 400px);
+}
+
+/* Celdas editables */
+.cell {
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 2vw;  /* Se ajusta con el tamaño de la pantalla */
+    font-weight: bold;
+    background-color: #f0f0f0;
+    outline: none;
+    text-transform: uppercase;
+}
+
+/* Efecto al enfocar */
+.cell:focus {
+    border-color: blue;
+}
+
+/* Botón de confirmación */
+.confirm-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 80vw;
+    max-width: 200px;
+}
+
+/* Efecto hover en el botón */
+.confirm-button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsividad para evitar que las celdas sean muy pequeñas */
+@media (max-width: 400px) {
+    .grid {
+        width: 90vw;
+        height: 90vw;
+    }
+    
+    .cell {
+        font-size: 5vw;
+    }
+}
+

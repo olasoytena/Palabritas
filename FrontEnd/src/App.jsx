@@ -6,6 +6,7 @@ import { NavBar } from './components/NavBar'
 import { About } from './components/About'
 import { Login } from './components/Login'
 import { Proyects } from './components/Proyects'
+import { Palabritas } from './components/Palabritas'
 import { Start } from './components/Start'
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
       <NavBar></NavBar>
 
       <Routes>      
-        <Route path='/' element={<Start/>}/>
+        <Route path='/' element={<Palabritas/>}/>
         <Route path='/Login' element={<Login/>}/>
         <Route path='/Proyects' element={<Proyects/>}/>    
         <Route path='/About' element={<About/>}/>            

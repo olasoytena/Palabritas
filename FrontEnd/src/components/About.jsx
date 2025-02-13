@@ -1,28 +1,37 @@
+import { useState } from "react";
 import "../css/About.css";
 
 export const About = () => {
-    return (
-        <div className="about-container">
-            <h1>Sobre Nosotros</h1>
-            <div className="about-content">
-                <div className="about-person">
-                    <h2>Juan Pérez</h2>
-                    <p>
-                        Apasionado del desarrollo web y la tecnología. Me encanta crear proyectos que 
-                        resuelvan problemas del mundo real y explorar nuevas herramientas en el ecosistema de JavaScript.
-                    </p>
-                </div>
-                <div className="about-person">
-                    <h2>María González</h2>
-                    <p>
-                        Desarrolladora enfocada en frontend, con una gran pasión por el diseño y la experiencia de usuario.
-                        Disfruto trabajando con React y creando interfaces atractivas e intuitivas.
-                    </p>
-                </div>
-            </div>
-            <p className="about-footer">
-                Este portafolio es uno de nuestros proyectos, construido con <strong>Vite, React y React Router</strong>.
-            </p>
-        </div>
-    );
-}
+  const [dividerPosition, setDividerPosition] = useState(50);
+
+  const handleMouseDown = (e) => {
+    e.preventDefault();
+    const startX = e.clientX;
+    const startWidth = (dividerPosition / 100) * window.innerWidth;
+
+    const handleMouseMove = (event) => {
+      const newWidth = ((startWidth + (event.clientX - startX)) / window.innerWidth) * 100;
+      setDividerPosition(Math.max(10, Math.min(90, newWidth)));
+    };
+
+    const handleMouseUp = () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseup", handleMouseUp);
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mouseup", handleMouseUp);
+  };
+
+  return (
+    <div className="about-container" onMouseDown={handleMouseDown}>
+      <div className="left-section" style={{ width: `${dividerPosition}%` }}>
+        <h1>Tena</h1>
+      </div>
+      <div className="divider"></div>
+      <div className="right-section" style={{ width: `${100 - dividerPosition}%` }}>
+        <h1>Eduardo</h1>
+      </div>
+    </div>
+  );
+};

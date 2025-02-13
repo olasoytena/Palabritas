@@ -7,7 +7,7 @@ export const NavBar = () => {
             <Link to='/'> Inicio</Link>    
             <Link to='/Login'> Login</Link>        
             <Link to='/Proyects'> Proyects</Link>                             
-            <Link to='/Abount'> Abount</Link>   
+            <Link to='/About'> About</Link>   
         </nav>
         
     )
